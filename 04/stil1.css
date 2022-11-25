@@ -1,0 +1,18 @@
+#tab1 tr:nth-child(3) {
+    background-color: yellow;
+}
+#tab1,th,td {
+    border: 1px solid rgb(223, 202, 202);
+    
+}
+#tab1,#tab2 {
+    border-collapse: collapse;
+    text-align: left;
+}
+th, td {
+    padding: 2px 10px;
+    margin: 30px;
+}
+#tab2 th:nth-child(3), #tab2 td:nth-child(3) {
+    background-color: yellow;
+}
