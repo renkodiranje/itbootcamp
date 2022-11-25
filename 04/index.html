@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="test.php" method="post">
+        <fieldset>
+            <legend>Osnovni podaci:</legend>
+            <p>
+                <label for="ime">Ime i prezime:</label>
+                <input type="text" name="ime" id="ime" maxlength="8" value="" placeholder="unesi ime">
+            </p>
+            <p>
+                <label for="username">Korisnicko ime:</label>
+                <input type="text" name="korisicko" id="username" maxlength="12" value="" placeholder="unesi korisnicko ime"> 
+            </p>
+            <p>
+                <label for="ps">lozinka</label>
+                <input type="pasword" id="ps" name="loz">
+            </p>
+            <input type="hidden" id="skriven" value="100" name="hidden">
+            <p>
+                <label for="godine">godine:</label>
+                <input type="number" id="godine" min="18" step="2" name="godine">
+            </p>
+            <p>
+                <label for="em">Email:</label>
+                <input type="email" name="email">
+            </p>
+            <p>
+               <label for="pol">Odaverite pol</label>
+               <input type="radio" id="z" value="z" name="pol" checked>Zenski
+               <input type="radio" id="m" value="m" name="pol">Muski
+               <input type="radio" id="d" value="d" name="pol">Drugo
+            </p>
+            <p>
+                <label for="pj">Odaberite programski jezik:</label>
+                <input type="checkbox" name="pj" id="html" value="html">HTML
+                <input type="checkbox" name="pj" id="css" value="sss"checked>css
+                <input type="checkbox" name="pj" id="js" value="js">JS
+
+            </p>
+            <p>
+                <label for="grad">Grad</label>
+                <select name="grad" id="grad">
+                    <optgroup label="entralna Srbija">
+                        <option value="kg">Kragujevac</option>
+                        <option value="bg">Beograd</option>
+                    </optgroup>
+                    <optgroup label="juzna Srbija">
+                        <option value="Nis">Nis</option>
+                    </optgroup>   
+                </select>
+            </p>
+            <p>
+                <label for="iskustva">Koja su basa iskustva za ovaj sajt</label>
+                <textarea name="iskustva" id="iskustva" cols="30" rows="10">unesite ovde</textarea>
+            </p>
+            <input type="submit" value="posalji">
+        </fieldset>
+    </form>
+    <table>
+        <tr>
+            <th>last name</th>
+            <th>first name</th>
+            <th>email</th>
+            <th>due</th>
+            <th>Web Site</th>
+        </tr>
+        <tr>
+            <td>smith</td>
+            <td>John</td>
+            <td>jmith@gmail.com</td>
+            <td>850.00</td>
+            <td>http://www.jsmith.com</td>
+        </tr>
+        <tr>bach</tr>
+        <tr>frank</tr>
+        <tr>bach@yahoo.com</tr>
+        <tr>850.00</tr>
+        <tr>http://frank.com</tr>
+    </table>
+</body>
+</html>

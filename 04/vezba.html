@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+    <form action="test.php" method="post">
+        <fieldset>
+            <legend>Form validation</legend>
+            <p>
+                <label for="ime">Name:</label>
+                <input type="text" name="ime" id="ime">
+            </p>
+            <p>
+                <label for="korisnicko">Username</label>
+                <input type="text" name="korisnicko" id="koricnocko">
+            </p>
+            <p>
+                <label for="loz">password</label>
+                <input type="password" name="loz" id="loz">
+            </p>
+            <p>
+                <label for="loz">re-type password:</label>
+                <input type="password" name="loz" id="loz1">
+            </p>
+            <p>
+                <label for="pol">Gender:</label>
+                <input type="radio" name="pol" id="m">male
+                <input type="radio" name="pol" id="z">female
+                <input type="radio" name="pol" id="o">Other
+            </p>
+            <p>
+                <label for="skil">programming skills:</label>
+                <input type="checkbox" name="skil" id="java">java
+                <input type="checkbox" name="skil" id="android">android
+                <input type="checkbox" name="skil" id="Ruby">Ruby
+                <input type="checkbox" name="skil" id="net">Net
+            </p>
+            <p>
+                <label for="broj">Contact no:</label>
+                <input type="number" name="broj" id="broj">
+            </p>
+            <p>
+                <label for="em">Email</label>
+                <input type="email" name="email" id="em">
+            </p>
+            <p>
+                <label for="koledz">College</label>
+                <select name="koledz" id="koledz">
+                        
+                        <option value="el">elektronski</option>
+                        <option value="mas">masinski</option>
+                        <option value="fon">Fon</option>
+                    
+                    
+                </select>
+            </p>
+            <p>
+                <input type="submit" value="submit">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
