@@ -1,0 +1,100 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.row {
+    width: 100%;
+    background-color: aqua;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    padding: 10px 0;
+}
+h3 {
+    text-align: center;
+    padding: 10px 0;
+}
+nav a {
+display:block;
+text-decoration: none;
+font-size: 20px;
+font-weight:300;
+border-bottom: 1px solid white;
+padding: 10px 10px;
+background-color: rgb(23, 211, 211);
+color: black;
+}
+.col-9,  .gradient {
+    background-image:linear-gradient( rgb(31, 201, 201) 30%, white 70%);
+    
+}
+.col-9 {
+    padding: 20px 0;
+}
+/*.row:nth-child(5) .col-4, .row:nth-child(5) .col-5 {
+   hei*/
+}
+img {
+    height: 319px;
+}
+p {
+    padding: 10px;
+}
+h2 {
+    padding: 10px;
+}
+footer {
+    position: fixed;
+    bottom:0;
+    background-color: aqua;
+}
+
+@media only screen and (max-width:500px) {
+    [class*="col-t-"] {
+        width: 100%;
+    }
+}
+@media only screen and (min-width:1000px) {
+    [class*="col-"] {
+        float: left;
+    }
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+       width: 33.33%;
+
+    }
+    .col-5 {
+        width:41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
