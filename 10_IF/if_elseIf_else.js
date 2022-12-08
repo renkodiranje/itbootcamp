@@ -22,7 +22,7 @@ if(dan == 0) {
     console.log("vikend");
 }
 else if(dan == 6) {
-    console.log("vikens");
+    console.log("vikend");
 }
 else{
     console.log("radni dan");
@@ -66,8 +66,9 @@ else if(sati < 9) {
 else {
     console.log("otvoreno");
 }
-// 11. Radno vreme jedne programerske firme je od 9h do 17h. Preuzeti vreme sa računara i ispitati da li u to vreme firma radi ili ne radi.
-//mora iscrtati sve varijante i isprobati za sve
+// // 11. Za unet sat početka i sat kraja radnog vremena dva lekara,  
+// ispisati DA ukoliko se smene lekara preklapaju, u suprotnom ispisati NE..
+// //mora iscrtati sve varijante i isprobati za sve
 let p1 = 8;
 let k1 = 16;
 let p2 = 16;
@@ -142,3 +143,40 @@ document.write(`<p>minimum  je ${mini}</p>`);
 //odredjivanje srednjeg broja
 let sr = b1 + b2 + b3 - maks - mini;
 document.write(`srednji broj je ${sr}`);
+// 10. zadatak
+
+if(sati < 12) {
+    document.write("dobro jutro");
+}
+else if ( sati < 18) {
+    document.write("dobar dan");
+}
+else {
+    document.write("dobro vece");
+}
+// // 15. Za uneti broj ispitati da li je on manji od nule, veći od nule ili jednak nuli. 
+// Ukoliko je manji ili jednak nuli ispisati njegov prethodnik, a ukoliko je veći od nule ispisati njegov sledbenik.
+broj = 0;
+if(broj < 0) {
+    document.write("manji od nule");
+}
+else if( broj > 0) {
+    document.write("veci od nule");
+}
+else {
+    document.write("jednak 0");
+}
+// da li je ceo
+broj = 5.57;
+console.log(Number.isInteger(broj));
+
+if(Number.isInteger(broj)) {
+    console.log("ceo broj");
+}
+else {
+    console.log("decimalan broj");
+}
+.
+
+
+ 
