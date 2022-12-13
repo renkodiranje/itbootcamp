@@ -176,7 +176,7 @@ if(Number.isInteger(broj)) {
 else {
     console.log("decimalan broj");
 }
-.
+
 
 
  
