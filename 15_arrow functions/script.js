@@ -78,7 +78,7 @@ let neparan = (n) => {
 }
 console.log(neparan(3));
 console.log(neparan(6));
-neparan(5);
+neparan(5);//ovako ne moze da se pozive
 document.body.innerHTML += neparan(5);
 
 
