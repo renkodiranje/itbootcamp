@@ -46,11 +46,6 @@ let sumaElemenata = niz => {
     return zbir;
 }
 
-// let zbir = 0;
-// for(let i = 0; i<brojevi.length;i++) {
-//     zbir += brojevi[i];
-
-// }
 // zadatak 3
 let proizvodElem = niz => {
     let pr = 1;
@@ -103,17 +98,6 @@ let srVrparnih = niz => {
 console.log(srVrparnih(brojevi3));
 
 // 5.Odrediti maksimalnu vrednost u celobrojnom niz
-// let brojevi4 = [1,8,2,-4];
-// let maksim = niz => {
-   
-//     let veci;
-//     for(let i = 0; i< niz.length; i++) {
-//         if(niz[i]>niz[i+1]) {
-//             veci=niz[i];
-//         }
-//     }
-//     return veci;
-// }
 // console.log(maksim(brojevi4));
 let brojx = [1,2,2,5,-10];
 let maxNiza = niz => {
@@ -127,32 +111,8 @@ let maxNiza = niz => {
 }
 console.log(maxNiza(brojx));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //6. Odrediti minimalnu vrednost u celobrojnom nizu.
 
-// let minim = niz => {
-//     let manji;
-//     for(let i = 0; i< niz.length; i++) {
-//         if(niz[i+1]<niz[i]) {
-//             manji = niz[i+1];
-//         }
-//     }
-//     return manji;
-// }
-// console.log(minim(brojevi4));
 let br = [1,2,3,4,-10];
 let minNiza = niz => {
     let min = niz[0];
