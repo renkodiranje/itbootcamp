@@ -242,7 +242,7 @@ document.write(promeniZnak(br8));
 
 //15. Promeniti znak svakom neparnom elementu celobrojnog niza sa parnim indeksom.
 
-let  promZnparNepar = niz => {
+let promZnparNepar = niz => {
     for(let i = 0; i < niz.length; i++) {
         if(niz[i]%2!=0&&i%2==0) {
             niz[i] = niz[i] *(-1);
