@@ -71,9 +71,101 @@ let dan = {
             }
         });
         return br;
-    }
+    },
+    maksimalna: function() {
+        let max = 0;
+        this.temperature.forEach (t => {
+            if(t > max) {
+                max = t;
+            }
+        });
+        let br = 0;
+        this.temperature.forEach (t => {
+            if(t == max) {
+                br++;
+            }
+        });
+        return br;
+    },
+    dve_temperature: function(a,b) {
+        let tx = 0;
+        
+        this.temperature.forEach ( t => {
+            if(t > b &&  t < a ) {
+                tx++;
+            }
+            });
+        return tx;       
+    },
+    toplo: function() {
+        // if(this.brNatprosecnih() > this.temperature.length/2) {
+        //     return true;
+        // }
+        // else {
+        //     return false;
+        // }
+        return (this.brNatprosecnih() > this.temperature.length/2);
+    },
+    // iznad_proseka: function() {
+    //     let tem = 0;
+    //     let pros;
+    //     let br_da = 0;
+    //     let br_ne = 0;
+    //     let x = undefined;
+    //     this.temperature.forEach(t => {
+    //         tem += t;
+    //     });
+    //     pros = tem / this.temperature.length;
+    //     this.temperature.forEach(t => {
+    //         if(t > pros) {
+    //             br_da++;
+    //         }
+    //         if(t < pros) {
+    //             br_ne++;
+    //         }
+    //     });
+    //     if(br_da > br_ne) {
+    //         x = true;
+    //     }
+    //     else {
+    //         x = false;
+    //     }
+    //     return x;
 
-};
+    // },
+    
+    ledeni_dan: function() {
+        
+        let t_plus = 0;
+        this.temperature.forEach(t => {
+            if(t > 0) {
+                t_plus++;
+            }
+        });
+        if( t_plus == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+//     leden: function() {
+//         for(let i =0; i < this.length; i++) {
+//             if(this.temperature[i] > 0) {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// };
+console.log(dan.ledeni_dan());
+//console.log(dan.iznad_proseka());
+console.log(dan.dve_temperature(-10, 0));
+console.log(dan.maksimalna());
 console.log(dan.prosecna());
 console.log(dan.brNatprosecnih());
+console.log(dan.toplo());
+
+
 

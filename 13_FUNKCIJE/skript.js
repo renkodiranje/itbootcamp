@@ -125,3 +125,19 @@ return maks2(maks2(br1,br2),maks2(br3,br4));
 let naj = maks4(15, 2, 14, 3);
 console.log(naj);
 
+// nogare
+
+// let fabrika = (d1,d2,d3) => {
+//     //ideja je da d1>d2>d3
+//     //if(d1 - d2 = d2 - d3) {
+//     //return d3 - (d1-d2)
+//     // }
+//     //else if(d1-d2>d2-d3) {
+//     //     return d1 - (d2-d3)
+//     // }
+//     else {
+        //return d2 = (d1-d2)
+//     }
+    
+//}
+

@@ -52,17 +52,17 @@ let indexMaxVr2 = niz => {
     return idx;
 }
 
-// let indexSvihMaxVr = niz => {
-//     let max = maxVr(niz);
-//     let indices = [];
-//     niz.forEach((el, i) => {/
-//         if(el == max ) {
-//             indices.push(i);
-//         }
-//     });
-//     return indices;
-// }
-// console.log(indexSvihMaxVr(b));
+let indexSvihMaxVr = niz => {
+    let max = maxVr(niz);
+    let indices = [];
+    niz.forEach((el, i) => {
+        if(el == max ) {
+            indices.push(i);
+        }
+    });
+    return indices;
+}
+console.log(indexSvihMaxVr(b));
 
 
 
