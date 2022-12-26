@@ -70,7 +70,7 @@ let dan = {
                 br++;
             }
         });
-        return br;
+        return br; 
     },
     maksimalna: function() {
         let max = 0;
@@ -161,7 +161,7 @@ let dan = {
 // };
 console.log(dan.ledeni_dan());
 //console.log(dan.iznad_proseka());
-console.log(dan.dve_temperature(-10, 0));
+console.log(dan.dve_temperature(-50, 10));
 console.log(dan.maksimalna());
 console.log(dan.prosecna());
 console.log(dan.brNatprosecnih());
