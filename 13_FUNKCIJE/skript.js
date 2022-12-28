@@ -74,9 +74,9 @@ velicinaFonta(80);
 
 // // Napisati funkciju koja pet puta ispisuje istu rečenicu, a veličina fonta rečenice treba da bude jednaka vrednosti iteratora. 
 function recenica(v_fonta) {
-    document.write(`<p style='font-size:${v_fonta}px'>text</p>`);
+    document.write(`<p style='font-size:${v_fonta}px; color:red;'>text</p>`);
 }
-for(i=20;i<=35;i+=2) {
+for(i=20;i<=40;i+=5) {
     v_fonta = i;
     recenica(v_fonta);
 }
@@ -96,7 +96,7 @@ function neparan(n) {
 let text = neparan(11);
 console.log(text);
 document.write(text);
-
+console.log(neparan(5));
 // 4. zadatak Napisati funkciju maks2 koja vraća veći od dva prosleđena realna broja. Zatim napisati funkciju maks4 koja vraća najveći od četiri prosleđena realna broja.
 
 function maks2(br1, br2) {

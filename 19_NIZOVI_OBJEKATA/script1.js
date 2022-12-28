@@ -41,7 +41,7 @@ let user = {
 let user1 = {
     username: "stefan",
     age: 13,
-    blogs: [blog2, blog3, blog5],
+    blogs: [blog5],
     logblogs: function() {
         this.blogs.forEach(blog => {
             console.log(blog.title);
@@ -51,7 +51,7 @@ let user1 = {
 let user2 = {
     username: "JohnDoe",
     age: 16,
-    blogs: [blog1, blog6],
+    blogs: [blog6],
     logblogs: function() {
         this.blogs.forEach(blog => {
             console.log(blog.title);
@@ -120,7 +120,7 @@ users.forEach(user => {
 });
 
 // Ispisati naslove onih blogova koji imaju natprosečan broj pozitivnih ocena
-//mije dobro ovo
+// mije dobro ovo
 // let prosek = blogs => {
 //     let sum = 0;
 //     let br = 0;

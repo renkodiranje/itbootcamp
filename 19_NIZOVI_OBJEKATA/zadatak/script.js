@@ -32,10 +32,11 @@ let prosecnaOcena = ocene => {
    });
    return sum/ocene.length;
 }
+
 let najStudent = studenti => {
     let naj = studenti[0];//pretpostavka
     studenti.forEach(student=> {
-        if(prosecnaOcena(naj.ocene)< prosecnaOcena(student.ocene)) {
+        if(prosecnaOcena(naj.ocene) < prosecnaOcena(student.ocene)) {
             naj = student;
         }
     });
