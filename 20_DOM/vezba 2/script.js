@@ -25,16 +25,16 @@ for(let i = 0; i < paragraf.length; i++) {
 
 
 // // Svim paragrafima čiji tekst sadrži reč error, postaviti klasu na error, svim paragrafima čiji tekst sadrži reč success, postaviti klasu na success. Ostale klase paragrafa ne modifikovati.
-//ispitati zasto ovo ne radi
-// for(let i = 0; i < paragraf.length; i++) {
-//     if(paragraf[i].textContent.includes("error")) {
-//         paragraf[i].classList.add(`error`);
-//     }
-//     else if(paragraf.textContent.includes("success")) {
-//         paragraf[i].classList.add(`success`);
-//     }
+
+for(let i = 0; i < paragraf.length; i++) {
+    if(paragraf[i].textContent.includes("error") == true) {
+        paragraf[i].classList.add("error");
+    }
+    if(paragraf[i].textContent.includes("success") == true) {
+        paragraf[i].classList.add("success");
+    }
    
-// }
+}
 
 
 // //  if(p.textContent.includes(’success’))

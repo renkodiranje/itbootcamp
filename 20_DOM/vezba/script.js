@@ -26,7 +26,7 @@ for(let i = 0; i < p1.length; i++) {
 }
 //neka je n broj paragrafa u datom dokumentu u svakom i tom paragrafu dodati broj i **2 za svako i = 1,2...n
 for(let i = 0; i < p1.length; i++) {
-    p1[i].innerHTML+="(i+1)**2";
+    p1[i].innerHTML+=`${(i+1)**2}`;
 }
 //sve paragrafe oboji u ljubicasto
 for(let i = 0; i < p1.length; i++) {

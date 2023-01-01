@@ -78,3 +78,4 @@ let naslov = document.createElement("h1");
 naslov.innerHTML = "naslov kreiran iz js-a";
 document.body.prepend(naslov);
 naslov.remove();
+
