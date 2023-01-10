@@ -45,7 +45,7 @@ btnPlus = document.getElementById("plus");
 spanRez = document.getElementById("rezultat");
 let br = 0;
 //Brojevi između 0 i 10 zelenom bojom.
-//Brojevi preko 10 crvenom bojom. probaj da resis
+//Brojevi preko 10 crvenom bojom. 
 btnMinus.addEventListener("click",()=>{
     br--;
     if(br < 0) {

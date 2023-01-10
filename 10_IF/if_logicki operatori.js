@@ -35,7 +35,7 @@ if(c!=7) {
     console.log(`c je razlicito 7`);
 }
 if(!(c==7)) {
-    console.log(`ce je razlicito od 7`);
+    console.log(`c je razlicito od 7`);
 }
 
 // 21. Naći koji je najveći od tri uneta broja 

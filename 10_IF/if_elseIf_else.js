@@ -5,7 +5,7 @@ if(br < 0) {
 else if(br == 0) {
     console.log("broj je jednak nuli");
 }
-else if( br == 1) {
+else if( br > 1) {
     console.log("broj je veci od nule");
 }
 else {

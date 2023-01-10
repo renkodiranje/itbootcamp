@@ -28,16 +28,16 @@ div {
     
     
 }
-//body {
+/* //body {
     background-color: rgb(167, 158, 158);
-}
+} */
 #prvi {
     background-color: rgb(240, 240, 196);
-    //margin-right: 20px;
+    /* //margin-right: 20px; */
 }
 #drugi {
     background-color: rgb(160, 143, 143);
-    //margin-right: 100px;
+    /* //margin-right: 100px; */
 }
 span { 
     display: inline-block;

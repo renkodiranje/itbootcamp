@@ -17,4 +17,5 @@ for(let i = 0; i < 3; i++) {
     let li = document.createElement("li");
     li.append(par);
     lista.append(li);
+
 }
