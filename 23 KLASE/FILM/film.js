@@ -7,8 +7,21 @@ class Film {
     }
 
     stampaj() {
-        console.log(`${this.naslov} - ${this.reziser} (${this.godinaIzdanja})`);
+        console.log(this);
     }
+    
+   stampajListufilmovi() {
+    let lista = 
+    `
+    <ul>
+        <li>ime: ${this.naslov}</li>
+        <li>rziser:${this.reziser}</li>
+        <li>godina:${this.godinaIzdanja}</li>
+        <li>ocene:${this.ocene}</li>
+    </ul>
+    `;
+    return lista;
+   }
     prosek() {
         let sum = 0;
         this.ocene.forEach(ocena => {

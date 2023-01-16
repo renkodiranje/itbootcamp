@@ -14,7 +14,6 @@ let pMinTezina = document.getElementById("minTezina");
 
 btnMinTezina.addEventListener("click",() =>{
     let minPac = pacijenti[0];
-    console.log(minPac);
     pacijenti.forEach(pacijent =>{
         if(pacijent.tezina<minPac.tezina) {
             minPac = pacijent;
