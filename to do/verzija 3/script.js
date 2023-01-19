@@ -23,16 +23,17 @@ input.addEventListener("keyup", e => {
                 }
                  else {
                     lista.append(nova);
+                    localStorage.setItem("username","renata");
                 }
             input.value = "";
             }
         }
 });
 lista.addEventListener("click", e => {
-    // console.log("kliknuto");
-    // console.log(e);
-    // console.log(e.target);
-    // console.log(e.target.tagName);
+    console.log("kliknuto");
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.tagName);
     if(e.target.tagName == "LI"){
         e.target.remove();
     }
@@ -59,6 +60,7 @@ console.log(grad);
 
 localStorage.setItem("year", 33);
 let god = localStorage.getItem("year");
+god++;
 god++;
 localStorage.setItem("year", god);
 console.log(`imam ${god} godina`);
