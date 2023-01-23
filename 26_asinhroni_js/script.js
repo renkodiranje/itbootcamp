@@ -129,7 +129,7 @@ let request = new XMLHttpRequest();
     // zadaci sa slajda br 16
     let getUsers = (resolve, reject) => {
         let request = new XMLHttpRequest();
-    request.addEventListener("readystatechange", () => {
+        request.addEventListener("readystatechange", () => {
         // console.log(request.readyState);
         if(request.readyState === 4 && request.status === 200) {
             let data = JSON.parse(request.responseText);
@@ -178,8 +178,36 @@ let request = new XMLHttpRequest();
     }, (poruka)=>{
         document.body.innerHTML += poruka;
     });
+//5
+    getUsers((niz)=>{
+        let grad = [];
+        niz.forEach(user => {
+            grad.push(user.address.city);
+        });
+        for(let i = 0; i < grad.length-1; i++) {
+            if(grad[i] != grad[i+1]) {
+                console.log(grad[i]);
+            }
+        }
+    }, (poruka)=> {
+        document.body.innerHTML += poruka;
+    });
+//6
 
+getUsers((niz)=>{
+    let br = 0;
+    niz.forEach(el=>{
+        if(Number(el.address.geo.lat)<0 && Number(el.address.geo.lng)<0) {
+            br++;
+        }
+    });
+    console.log(br);
 
+}, (poruka)=> {
+    document.body.innerHTML += poruka;
+});
 
-
-
+   
+   
+    
+    

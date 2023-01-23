@@ -60,6 +60,7 @@ console.log(grad);
 
 localStorage.setItem("year", 33);
 let god = localStorage.getItem("year");
+console.log(god);
 god++;
 god++;
 localStorage.setItem("year", god);
