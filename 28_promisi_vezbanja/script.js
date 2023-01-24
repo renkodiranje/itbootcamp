@@ -2,6 +2,9 @@ let form = document.getElementById("order");
 let truckCap = document.getElementById("cap");
 let result = document.getElementById("result");
 
+
+/// drugi 
+
 function getItems(resource, resolve, reject) {
     let request = new XMLHttpRequest();
     request.addEventListener("readystatechange", function(){
@@ -77,6 +80,7 @@ function submitForm1(e) {
    
 }
 // form.addEventListener("submit", submitForm1);
+
 function getItemsReturnPromise(resource) {
     return new Promise((resolve, reject) => { 
     let request = new XMLHttpRequest();
@@ -125,13 +129,15 @@ function submitForm2(e) {
     .then((data) => {
         if(data !== undefined) {
             let totalPrice = 0;
+            
             data.forEach(artikl=> {
                 if(ids.includes(artikl.id)) {
                     totalPrice += artikl.price;
                     
                 }
             });
-            result.innerHTML = `ukupna cena proizvoda koji treba da se poruce je ${totalPrice}`
+            result.innerHTML = `ukupna cena proizvoda koji treba da se poruce je ${totalPrice}`;
+
         }
     })
     .catch((message) => {
@@ -141,4 +147,116 @@ function submitForm2(e) {
 
 form.addEventListener("submit", submitForm2);
 
+// function submitForm2(e) {
+//     e.preventDefault();
+//     let ids = [];
+//     let table = document.createElement("table");
+//     table.style.border = "1px solid black";
+    
+    
+//     getItemsReturnPromise("./json/stok.json")
+//     .then((data) => {
+//         data.forEach(artikl => {
+//             if(artikl.stok == 0) {
+//                 let tr = document.createElement("tr");
+//                 let td1 = document.createElement("td");
+//                 td1.innerHTML = artikl.item;
+//                 console.log(td1);
+//                 ids.push(artikl.id);
+//                 console.log(ids);
+//                 tr.append(td1);
+//                 console.log(tr);
+//             }
+//             // tr.append(td1);
+//             // console.log(tr);
+           
+//         });
+//         console.log(ids);
+//         return getItemsReturnPromise("./json/weight.json");
+//     })
+//     .then((data)=>{
+//         let  totalWeight = 0;
+//         data.forEach(artikl=> {
+//             if(ids.includes(artikl.id)) {
+//                 totalWeight += artikl.weight;
+//             }
+//         });
+//         console.log(totalWeight);
+//         if(totalWeight > truckCap.value) {
+//             result.innerHTML = "kamion nema dovoljno kapaciteta";
+//         }
+//         else {
+//             return getItemsReturnPromise("./json/prises.json");
+//         }
+//     })
+//     .then((data) => {
+//         if(data !== undefined) {
+//             let totalPrice = 0;
+            
+//             data.forEach(artikl=> {
+//                 if(ids.includes(artikl.id)) {
+//                     let td2 = document.createElement("td");
+//                     totalPrice += artikl.price;
+//                     td2.innerHTML = artikl.price;
+                    
+//                 }
+//                 let td3 = document.createElement("td");
+//                 td3.innerHTML = "UKUPNO:"
+//                 let td4 = document.createElement("td");
+//                 td4.innerHTML = totalPrice;
+//             });
+            
+//             // tr.append(td2);
+            
+//             // table.append(tr);
+//             result.append(table);
+//             // result.innerHTML = `ukupna cena proizvoda koji treba da se poruce je ${totalPrice}`;
 
+//         }
+//     })
+//     .catch((message) => {
+//         result.innerHTML = message;
+//     });
+// }
+
+// form.addEventListener("submit", submitForm2);
+
+/////2. zadatak
+
+// a.	Odrediti sve proizvode koji su na stanju.
+// b.	Naći takve proizvode koji u nazivu sadrže reč koju je korisnik uneo.
+// c. 	Kao i one čija je cena između dve vrednosti zadate u dva numerička inputa.
+// d.	Korisniku prikazati u listi nazive tih artikala.
+// e.	BONUS VARIJANTA: Ne ispisati samo nazive artikala, već ispis izvršiti u tabeli sa tri kolone: U prvoj koloni staviti naziv artikla, u drugoj stanje u magacinu, u trećoj cenu artikla.
+
+let form2 = document.getElementById("prvi");
+let prvacena = document.getElementById("1");
+let drugacena = document.getElementById("2");
+let naziv = document.getElementById("unos");
+
+function function2(e) {
+    e.preventDefault();
+    let nizx = [];
+    getItemsReturnPromise("./json/stok.json")
+    .then((data) => {
+        data.forEach(artikl => {
+            if(artikl.stok != 0 && artikl.item.includes(naziv.value)) {
+                nizx.push(artikl);
+            }
+        });
+        console.log(nizx);
+        return getItemsReturnPromise("./json/prises.json");
+    })
+    .then((data)=> {
+        data.forEach(artikl => {
+            if()
+        })
+    })
+    
+
+
+}
+
+
+
+form2.addEventListener("submit", function2);
