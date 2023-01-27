@@ -233,7 +233,45 @@ let form2 = document.getElementById("prvi");
 let prvacena = document.getElementById("1");
 let drugacena = document.getElementById("2");
 let naziv = document.getElementById("unos");
+let rez =  document.getElementById("rez");
+// function function2(e) {
+//     e.preventDefault();
+//     let nizx = [];
+//     getItemsReturnPromise("./json/stok.json")
+//     .then((data) => {
+//         data.forEach(artikl => {
+//             if(artikl.stok != 0 && artikl.item.includes(naziv.value)) {
+//                 nizx.push(artikl);
+//             }
+//         });
+//         console.log(nizx);
+//         return getItemsReturnPromise("./json/prises.json");
+//     })
+//     .then((data)=> {
+//         let x = [];
+//         data.forEach(artikl => {
+//             for(let i = 0; i < nizx.length; i++) {
+               
+//                 if(artikl.id == nizx[i].id && artikl.price>prvacena.value && artikl.price<drugacena.value) {
+//                     x.push(artikl);
+//                 }
+//             }
+//         });
+//         console.log(x);
+//         let ul = document.createElement("ul");
+//         rez.append(ul);
+//         x.forEach(el=> {
+//             let li = document.createElement("li");
+//             li.textContent = el.item;
+//             ul.append(li);
+//         });
+//     })
+//     .catch(()=>{
+//         console.log("greska");
+//     });
+// }
 
+form2.addEventListener("submit", function2);
 function function2(e) {
     e.preventDefault();
     let nizx = [];
@@ -248,15 +286,37 @@ function function2(e) {
         return getItemsReturnPromise("./json/prises.json");
     })
     .then((data)=> {
+        let x = [];
         data.forEach(artikl => {
-            if()
-        })
+            for(let i = 0; i < nizx.length; i++) {
+               
+                if(artikl.id == nizx[i].id && artikl.price>prvacena.value && artikl.price<drugacena.value) {
+                    x.push(artikl);
+                }
+            }
+        });
+        console.log(x);
+        let table = document.createElement("table");
+        rez.append(table);
+        console.log(nizx);
+        
+        for(let i = 0; i < nizx.length; i++) {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            
+            td1.textContent = nizx[i].item;
+            td2.textContent = nizx[i].stok;
+            let td3 = document.createElement("td");
+            td3.textContent = x[i].price;
+        
+            tr.append(td1, td2, td3);
+            table.append(tr);
+        }
+        
     })
-    
-
-
+    .catch(()=>{
+        console.log("greska");
+    });
 }
-
-
-
 form2.addEventListener("submit", function2);

@@ -31,6 +31,21 @@ db.collection("customers")
 .catch((err)=>{
     console.log("greska:" + err);
 });
+db.collection("customers")
+.doc("cust002")
+.set({
+    name: "Mirko Miric",
+    age: 40,
+    adresses: ["valjevo", "leskovac"],
+    salery: 800
+    
+})
+.then(()=>{
+    console.log("uspesno dodata musterija");
+})
+.catch((err)=>{
+    console.log("greska:" + err);
+});
 console.log(1);
 console.log(2);
 db.collection("customers")
@@ -99,14 +114,15 @@ db.collection("USERS").doc("pperic").set({
 });
 //update metoda
 db.collection("USERS").doc("rtukic").update({
-    age: 25
+    age: 27
 })
 .then(()=> {
     console.log("promenjen");
 
 db.collection("USERS").doc("rtukic")
 .update({
-    adrese: firebase.firestore.FieldValue.arrayUnion("pasi poljana")
+    adrese: firebase.firestore.FieldValue.arrayUnion("pasi poljana"),
+    age: 33
     })
 })    
 .then(()=>{
