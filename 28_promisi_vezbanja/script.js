@@ -98,78 +98,15 @@ function getItemsReturnPromise(resource) {
     }); 
    
 }
-function submitForm2(e) {
-    e.preventDefault();
-    let ids = [];
-    getItemsReturnPromise("./json/stok.json")
-    .then((data) => {
-        data.forEach(artikl => {
-            if(artikl.stok == 0) {
-                ids.push(artikl.id);
-            }
-        });
-        console.log(ids);
-        return getItemsReturnPromise("./json/weight.json");
-    })
-    .then((data)=>{
-        let  totalWeight = 0;
-        data.forEach(artikl=> {
-            if(ids.includes(artikl.id)) {
-                totalWeight += artikl.weight;
-            }
-        });
-        console.log(totalWeight);
-        if(totalWeight > truckCap.value) {
-            result.innerHTML = "kamion nema dovoljno kapaciteta";
-        }
-        else {
-            return getItemsReturnPromise("./json/prises.json");
-        }
-    })
-    .then((data) => {
-        if(data !== undefined) {
-            let totalPrice = 0;
-            
-            data.forEach(artikl=> {
-                if(ids.includes(artikl.id)) {
-                    totalPrice += artikl.price;
-                    
-                }
-            });
-            result.innerHTML = `ukupna cena proizvoda koji treba da se poruce je ${totalPrice}`;
-
-        }
-    })
-    .catch((message) => {
-        result.innerHTML = message;
-    });
-}
-
-form.addEventListener("submit", submitForm2);
-
 // function submitForm2(e) {
 //     e.preventDefault();
 //     let ids = [];
-//     let table = document.createElement("table");
-//     table.style.border = "1px solid black";
-    
-    
 //     getItemsReturnPromise("./json/stok.json")
 //     .then((data) => {
 //         data.forEach(artikl => {
 //             if(artikl.stok == 0) {
-//                 let tr = document.createElement("tr");
-//                 let td1 = document.createElement("td");
-//                 td1.innerHTML = artikl.item;
-//                 console.log(td1);
 //                 ids.push(artikl.id);
-//                 console.log(ids);
-//                 tr.append(td1);
-//                 console.log(tr);
 //             }
-//             // tr.append(td1);
-//             // console.log(tr);
-           
 //         });
 //         console.log(ids);
 //         return getItemsReturnPromise("./json/weight.json");
@@ -195,22 +132,11 @@ form.addEventListener("submit", submitForm2);
             
 //             data.forEach(artikl=> {
 //                 if(ids.includes(artikl.id)) {
-//                     let td2 = document.createElement("td");
 //                     totalPrice += artikl.price;
-//                     td2.innerHTML = artikl.price;
                     
 //                 }
-//                 let td3 = document.createElement("td");
-//                 td3.innerHTML = "UKUPNO:"
-//                 let td4 = document.createElement("td");
-//                 td4.innerHTML = totalPrice;
 //             });
-            
-//             // tr.append(td2);
-            
-//             // table.append(tr);
-//             result.append(table);
-//             // result.innerHTML = `ukupna cena proizvoda koji treba da se poruce je ${totalPrice}`;
+//             result.innerHTML = `ukupna cena proizvoda koji treba da se poruce je ${totalPrice}`;
 
 //         }
 //     })
@@ -220,6 +146,81 @@ form.addEventListener("submit", submitForm2);
 // }
 
 // form.addEventListener("submit", submitForm2);
+
+function submitForm3(e) {
+    e.preventDefault();
+    let ids = [];
+    let table = document.createElement("table");
+    table.style.border = "1px solid black";
+    let zaispis = [];
+    
+    getItemsReturnPromise("./json/stok.json")
+    .then((data) => {
+        data.forEach(artikl => {
+            if(artikl.stok == 0) {
+                ids.push(artikl.id);
+            }
+           
+        });
+        console.log(ids);
+        return getItemsReturnPromise("./json/weight.json");
+    })
+    .then((data)=>{
+        let  totalWeight = 0;
+        data.forEach(artikl=> {
+            if(ids.includes(artikl.id)) {
+                totalWeight += artikl.weight;
+            }
+        });
+        console.log(totalWeight);
+        if(totalWeight > truckCap.value) {
+            result.innerHTML = "kamion nema dovoljno kapaciteta";
+        }
+        else {
+            return getItemsReturnPromise("./json/prises.json");
+        }
+    })
+    .then((data) => {
+        if(data !== undefined) {
+            let totalPrice = 0;
+            
+            data.forEach(artikl=> {
+                if(ids.includes(artikl.id)) {
+                    zaispis.push(artikl);
+                    totalPrice += artikl.price;
+                }
+                
+            });
+            
+            zaispis.forEach(el=> {
+                let td1 = document.createElement("td");
+                td1.innerHTML = el.item;
+                let td2 = document.createElement("td");
+                td2.innerHTML =el.price;
+                let tr = document.createElement("tr");
+                tr.append(td1, td2);
+                table.append(tr);
+
+            });
+          
+            let td4 = document.createElement("td");
+            td4.innerHTML = "Ukupno:";
+            let td5 = document.createElement("td");
+            td5.innerHTML = totalPrice;
+            let tr = document.createElement("tr");
+            tr.append(td4, td5); 
+            table.append(tr);
+            result.append(table);
+            
+
+        }
+    })
+    .catch((message) => {
+        result.innerHTML = message;
+    });
+}
+
+form.addEventListener("submit", submitForm3);
 
 /////2. zadatak
 
@@ -234,42 +235,7 @@ let prvacena = document.getElementById("1");
 let drugacena = document.getElementById("2");
 let naziv = document.getElementById("unos");
 let rez =  document.getElementById("rez");
-// function function2(e) {
-//     e.preventDefault();
-//     let nizx = [];
-//     getItemsReturnPromise("./json/stok.json")
-//     .then((data) => {
-//         data.forEach(artikl => {
-//             if(artikl.stok != 0 && artikl.item.includes(naziv.value)) {
-//                 nizx.push(artikl);
-//             }
-//         });
-//         console.log(nizx);
-//         return getItemsReturnPromise("./json/prises.json");
-//     })
-//     .then((data)=> {
-//         let x = [];
-//         data.forEach(artikl => {
-//             for(let i = 0; i < nizx.length; i++) {
-               
-//                 if(artikl.id == nizx[i].id && artikl.price>prvacena.value && artikl.price<drugacena.value) {
-//                     x.push(artikl);
-//                 }
-//             }
-//         });
-//         console.log(x);
-//         let ul = document.createElement("ul");
-//         rez.append(ul);
-//         x.forEach(el=> {
-//             let li = document.createElement("li");
-//             li.textContent = el.item;
-//             ul.append(li);
-//         });
-//     })
-//     .catch(()=>{
-//         console.log("greska");
-//     });
-// }
+
 
 form2.addEventListener("submit", function2);
 function function2(e) {
@@ -297,6 +263,7 @@ function function2(e) {
         });
         console.log(x);
         let table = document.createElement("table");
+        table.style.border = "1px solid black";
         rez.append(table);
         console.log(nizx);
         
